@@ -47,7 +47,7 @@
 
 **方式A：从Git克隆（如果仓库已推送到远程）**
 ```bash
-git clone <仓库地址> jingsai-expert-system
+git https://github.com/15x3/jingsai-expert-system
 cd jingsai-expert-system
 ```
 
