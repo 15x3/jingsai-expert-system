@@ -1,7 +1,6 @@
 ---
 description: 职业教育教学能力比赛实战教练——生成备赛指导建议并直接修改文档
 mode: subagent
-model: anthropic/claude-sonnet-4-6
 permission:
   edit: allow
   bash: allow

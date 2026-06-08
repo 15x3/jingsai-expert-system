@@ -1,24 +1,19 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "zhipuai-coding-plan/glm-4.6",
-  "small_model": "zhipuai-coding-plan/glm-4.5-air",
   "instructions": ["AGENTS.md"],
   "skills": {
     "paths": [".opencode/skills"]
   },
   "agent": {
     "jingsai-coach": {
-      "model": "zhipuai-coding-plan/glm-4.6",
       "mode": "subagent",
       "description": "职业教育教学能力比赛实战教练——生成备赛指导建议并直接修改文档"
     },
     "jingsai-reviewer": {
-      "model": "zhipuai-coding-plan/glm-4.6",
       "mode": "subagent",
       "description": "政策标准审查员——核查建议是否符合政策文件和评分标准"
     },
     "jingsai-judge": {
-      "model": "zhipuai-coding-plan/glm-4.6",
       "mode": "subagent",
       "description": "模拟评审视角——从评委角度找逻辑漏洞和扣分风险"
     }

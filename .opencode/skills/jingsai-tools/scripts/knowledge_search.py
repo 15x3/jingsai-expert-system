@@ -3,11 +3,26 @@ import json
 import os
 import re
 
+def find_knowledge_base():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(script_dir, "..", "..", "..", "..", "knowledge-base"),
+        os.path.join(script_dir, "..", "..", "..", "knowledge-base"),
+    ]
+    for c in candidates:
+        c = os.path.normpath(c)
+        if os.path.isdir(c):
+            return c
+    cwd_kb = os.path.join(os.getcwd(), "knowledge-base")
+    if os.path.isdir(cwd_kb):
+        return cwd_kb
+    return None
+
 def search_knowledge(keyword, category=None, limit=5):
-    base = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
-        os.path.dirname(os.path.abspath(__file__))))), "knowledge-base")
-    if not os.path.isdir(base):
-        return {"error": f"knowledge-base not found at {base}", "results": []}
+    base = find_knowledge_base()
+    if base is None:
+        searched = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "..", "knowledge-base"))
+        return {"error": f"knowledge-base not found. Searched: {searched} and CWD: {os.getcwd()}", "results": []}
 
     categories = [category] if category else ["方法论", "资源", "标准"]
     results = []
