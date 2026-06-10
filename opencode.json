@@ -16,6 +16,10 @@
     "jingsai-judge": {
       "mode": "subagent",
       "description": "模拟评审视角——从评委角度找逻辑漏洞和扣分风险"
+    },
+    "jingsai-formatter": {
+      "mode": "subagent",
+      "description": "版式排版审查员——专门检查字体、字号、配色、留白、图文排布等版式问题"
     }
   }
 }
